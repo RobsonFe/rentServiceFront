@@ -13,13 +13,13 @@ export class LocacaoService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrarLocacao(clienteId:number, dataInicial:string, dataFinal:string): Observable<Locacao>{
-
-    const params = new HttpParams()
-    .set('clienteId', clienteId.toString())
-    .set('dataInicial', dataInicial)
-      .set('dataFinal', dataFinal);
-    return this.http.post<Locacao>(`${this.apiUrl}`, null, { params });
+  cadastrarLocacao(clienteNome: string, dataInicial: string, dataFinal: string): Observable<Locacao> {
+    const body = {
+      clienteNome: clienteNome,
+      dataInicial: dataInicial,
+      dataFinal: dataFinal
+    };
+    return this.http.post<Locacao>(`${this.apiUrl}`, body);
   }
 
   listarLocacoes(): Observable<Locacao[]> {
