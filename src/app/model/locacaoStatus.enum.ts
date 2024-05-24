@@ -1,4 +1,4 @@
 export enum LocacaoStatus{
-  TEM_LOCACAO = "TEM LOCACAO",
-  SEM_LOCACAO = "SEM LOCACAO"
+  TEM_LOCACAO = "TEM_LOCACAO",
+  SEM_LOCACAO = "SEM_LOCACAO"
 }

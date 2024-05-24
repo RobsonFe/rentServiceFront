@@ -1,3 +1,4 @@
+import { LocacaoService } from './../../service/locacao.service';
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../../model/cliente.model';
 import { CommonModule } from '@angular/common';
@@ -16,18 +17,24 @@ export class LocacaoComponent implements OnInit {
   cliente: Cliente;
   locacaoStatuses = Object.values(LocacaoStatus);
 
-  constructor() {
+  constructor(private LocacaoService:LocacaoService) {
     this.cliente = { id: 0, name: '', locacaoStatus: LocacaoStatus.SEM_LOCACAO };
   }
 
   ngOnInit(): void {}
 
-  cadastrarLocacao() {
-    console.log('Cliente:', this.cliente);
-    this.limparFormulario();
+  cadastrarCliente() {
+    this.LocacaoService.cadastrarLocacao(this.cliente)
+      .subscribe(response => {
+        console.log('Locação cadastrada:', response);
+        this.limparFormulario();
+      }, error => {
+        console.error('Erro ao cadastrar locação:', error);
+      });
   }
 
   limparFormulario(){
     this.cliente = { id: 0, name: '', locacaoStatus: LocacaoStatus.SEM_LOCACAO };
+
   }
 }

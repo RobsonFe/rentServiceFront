@@ -4,7 +4,7 @@
 </ol>
 
 <div class="container">
-  <form (ngSubmit)="cadastrarLocacao()">
+  <form (ngSubmit)="cadastrarCliente()">
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
@@ -16,18 +16,6 @@
         <div class="form-group">
           <label>Nome</label>
           <input type="text" class="form-control" [(ngModel)]="cliente.name" name="name" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data Inicial</label>
-          <input type="text" class="form-control" name="dataInicial" disabled="true" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data Final</label>
-          <input type="text" class="form-control" name="dataFinal" disabled="true" />
         </div>
       </div>
       <div class="col-md-6">

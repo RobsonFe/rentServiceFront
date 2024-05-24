@@ -1,3 +1,4 @@
+import { LocacaoStatus } from './../model/locacaoStatus.enum';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,17 +10,12 @@ import { Cliente } from '../model/cliente.model';
 })
 export class LocacaoService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/locacoes';
+  private apiUrl = 'http://localhost:8080/api/v1/locacoes/clientes';
 
   constructor(private http: HttpClient) { }
 
-  cadastrarLocacao(clienteNome: string, dataInicial: string, dataFinal: string): Observable<Locacao> {
-    const body = {
-      clienteNome: clienteNome,
-      dataInicial: dataInicial,
-      dataFinal: dataFinal
-    };
-    return this.http.post<Locacao>(`${this.apiUrl}`, body);
+  cadastrarLocacao(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`${this.apiUrl}/cadastrar`, cliente);
   }
 
   listarLocacoes(): Observable<Locacao[]> {
