@@ -2,18 +2,20 @@ import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
-
-import jQuery from 'jquery';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LocacaoComponent } from './components/locacao/locacao.component';
+import jQuery from 'jquery';
+import { LocacaoService } from './service/locacao.service';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, SidebarComponent, HomeComponent, LoginComponent, LocacaoComponent],
+  imports: [RouterOutlet, NavbarComponent, SidebarComponent, HomeComponent, LoginComponent, LocacaoComponent, HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [LocacaoService, HttpClient]
 })
 
 export class AppComponent implements AfterViewInit {
