@@ -5,11 +5,13 @@ import { SidebarComponent } from './template/sidebar/sidebar.component';
 
 import jQuery from 'jquery';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LocacaoComponent } from './components/locacao/locacao.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, SidebarComponent, HomeComponent],
+  imports: [RouterOutlet, NavbarComponent, SidebarComponent, HomeComponent, LoginComponent, LocacaoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
