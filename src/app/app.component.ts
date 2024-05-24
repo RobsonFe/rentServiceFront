@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,6 +14,7 @@ import {
 } from '@angular/common/http';
 import { ConsultarComponent } from './components/consultar/consultar.component';
 import { EditarComponent } from './components/editar/editar.component';
+
 
 @Component({
   selector: 'app-root',

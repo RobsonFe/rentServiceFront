@@ -6,8 +6,8 @@ import { ConsultarComponent } from './components/consultar/consultar.component';
 import { EditarComponent } from './components/editar/editar.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' },
   { path: 'home', component: HomeComponent },
   { path: 'cadastrar', component: LocacaoComponent },
   { path: 'consultar', component: ConsultarComponent },
