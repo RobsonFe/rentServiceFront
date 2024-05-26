@@ -29,10 +29,11 @@ import { EditarComponent } from './components/editar/editar.component';
     HttpClientModule,
     ConsultarComponent,
     EditarComponent,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [LocacaoService, HttpClient],
+  providers: [LocacaoService, HttpClient, RouterModule],
 })
 export class AppComponent implements AfterViewInit {
   title = 'rentservice-front';

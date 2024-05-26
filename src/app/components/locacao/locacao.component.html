@@ -4,14 +4,8 @@
 </ol>
 
 <div class="container">
-  <form (ngSubmit)="cadastrarCliente()">
+  <form (ngSubmit)="cadastrarLocacao()">
     <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>ID</label>
-          <input type="text" class="form-control" disabled="true" [(ngModel)]="cliente.id" name="id" />
-        </div>
-      </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Nome</label>
@@ -20,9 +14,33 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
+          <label>Data Inicial</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.dataInicial" name="dataInicial" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Data Final</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.dataFinal" name="dataFinal" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Marca doVeiculo</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.veiculo" name="veiculo" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
           <label>Status</label>
           <select class="form-control" [(ngModel)]="cliente.locacaoStatus" name="locacaoStatus">
             <option *ngFor="let status of locacaoStatuses" [value]="status">{{status}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tipo de Veiculo</label>
+          <select class="form-control" [(ngModel)]="cliente.tipoVeiculo" name="tipoVeiculo">
+            <option *ngFor="let status of tipoVeiculos" [value]="status">{{status}}</option>
           </select>
         </div>
       </div>

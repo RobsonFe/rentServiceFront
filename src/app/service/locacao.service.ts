@@ -1,8 +1,6 @@
-import { LocacaoStatus } from './../model/locacaoStatus.enum';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Locacao } from '../model/locacao.model';
 import { Cliente } from '../model/cliente.model';
 
 @Injectable({
@@ -16,15 +14,19 @@ export class LocacaoService {
   constructor(private http: HttpClient) { }
 
   cadastrarLocacao(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.apiUrlCliente}/cadastrar`, cliente);
+
+    if(!cliente.name){
+      throw new Error("Nome do cliente é obrigatório")
+    }
+    return this.http.post<Cliente>(`${this.apiUrlLocacao}/cadastrar`, cliente);
   }
 
-  listarLocacoes(): Observable<Locacao[]> {
-    return this.http.get<Locacao[]>(`${this.apiUrlLocacao}`);
+  listarLocacoes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${this.apiUrlLocacao}`);
   }
 
-  consultarLocacao(id: number): Observable<Locacao> {
-    return this.http.get<Locacao>(`${this.apiUrlLocacao}/consultar/${id}`);
+  consultarLocacao(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.apiUrlLocacao}/consultar/${id}`);
   }
 
   buscarPorNome(nome: string): Observable<Cliente[]> {
