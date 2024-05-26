@@ -51,6 +51,7 @@ export class LocacaoComponent implements OnInit {
       },
       error => {
         console.error('Erro ao cadastrar locação:', error);
+        this.limparFormulario();
       }
     );
   }
