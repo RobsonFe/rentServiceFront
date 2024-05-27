@@ -14,10 +14,6 @@ export class LocacaoService {
   constructor(private http: HttpClient) { }
 
   cadastrarLocacao(cliente: Cliente): Observable<Cliente> {
-
-    if(!cliente.name){
-      throw new Error("Nome do cliente é obrigatório")
-    }
     return this.http.post<Cliente>(`${this.apiUrlLocacao}/cadastrar`, cliente);
   }
 

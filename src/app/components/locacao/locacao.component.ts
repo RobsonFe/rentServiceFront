@@ -1,4 +1,3 @@
-import { ConsultarComponent } from './../consultar/consultar.component';
 import { Cliente } from './../../model/cliente.model';
 import { LocacaoService } from './../../service/locacao.service';
 import { Component, OnInit } from '@angular/core';
@@ -8,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LocacaoStatus } from '../../model/locacaoStatus.enum';
 import { TipoVeiculo } from '../../model/tipoVeiculo.enum';
 
+
 @Component({
   selector: 'app-locacao',
   standalone: true,
   imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './locacao.component.html',
   styleUrls: ['./locacao.component.css'],
+
 })
 export class LocacaoComponent implements OnInit {
   cliente: Cliente = {
@@ -35,16 +36,19 @@ export class LocacaoComponent implements OnInit {
 
   cadastrarLocacao() {
 
-    const dataRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+    const dataInicialFormatada = this.formatarData(this.cliente.dataInicial);
+    const dataFinalFormatada = this.formatarData(this.cliente.dataFinal);
 
-    if (!dataRegex.test(this.cliente.dataInicial) || !dataRegex.test(this.cliente.dataFinal)) {
-      console.error('Formato de data inválido. Use dd/MM/yyyy.');
-      return;
-    }
 
-    console.log('Objeto cliente antes do envio:', this.cliente);
+    const clienteFormatado: Cliente = {
+      ...this.cliente,
+      dataInicial: dataInicialFormatada,
+      dataFinal: dataFinalFormatada
+    };
 
-    this.locacaoService.cadastrarLocacao(this.cliente).subscribe(
+    console.log('Objeto cliente antes do envio:', clienteFormatado);
+
+    this.locacaoService.cadastrarLocacao(clienteFormatado).subscribe(
       response => {
         console.log('Locação cadastrada:', response);
         this.limparFormulario();
@@ -54,6 +58,12 @@ export class LocacaoComponent implements OnInit {
         this.limparFormulario();
       }
     );
+  }
+
+
+  private formatarData(data: string): string {
+    const [year, month, day] = data.split('-');
+    return `${day}/${month}/${year}`;
   }
 
   limparFormulario() {
@@ -67,5 +77,4 @@ export class LocacaoComponent implements OnInit {
       tipoVeiculo: TipoVeiculo.CARRO,
     };
   }
-
 }
