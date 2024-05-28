@@ -6,12 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LocacaoStatus } from '../../model/locacaoStatus.enum';
 import { TipoVeiculo } from '../../model/tipoVeiculo.enum';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-locacao',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink],
   templateUrl: './locacao.component.html',
   styleUrls: ['./locacao.component.css'],
 

@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -29,7 +29,8 @@ import { EditarComponent } from './components/editar/editar.component';
     HttpClientModule,
     ConsultarComponent,
     EditarComponent,
-    RouterModule
+    RouterModule,
+    RouterLink
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
