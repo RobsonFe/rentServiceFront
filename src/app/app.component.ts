@@ -13,6 +13,7 @@ import {
   HttpHandler,
 } from '@angular/common/http';
 import { ConsultarComponent } from './components/consultar/consultar.component';
+import { GreetingsComponent } from './pages/greetings/greetings.component';
 
 
 @Component({
@@ -24,6 +25,7 @@ import { ConsultarComponent } from './components/consultar/consultar.component';
     SidebarComponent,
     HomeComponent,
     LoginComponent,
+    GreetingsComponent,
     LocacaoComponent,
     HttpClientModule,
     ConsultarComponent,
