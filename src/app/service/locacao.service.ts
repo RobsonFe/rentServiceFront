@@ -34,8 +34,12 @@ export class LocacaoService {
     return this.http.get<Cliente>(`${this.apiUrlLocacao}/consultar/${id}`);
   }
 
-  alterarCadastro(id: number, cliente:Cliente): Observable<Cliente>{
-    return this.http.put<Cliente>(`${this.apiUrlCliente}/alterar/${id}`, cliente)
+  consultarCliente(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.apiUrlCliente}/consultar/${id}`);
+  }
+
+  alterarCadastro(cliente:Cliente): Observable<Cliente>{
+    return this.http.put<Cliente>(`${this.apiUrlCliente}/alterar/${cliente.id}`, cliente)
   }
 
   buscarPorNome(nome: string): Observable<Cliente[]> {

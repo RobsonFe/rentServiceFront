@@ -14,7 +14,7 @@
           <div class="alert alert-success" role="alert" *ngIf="success">
             Cadastro realizado com sucesso!
           </div>
-          <div class="alert alert-danger" role="alert" *ngIf="erros">
+          <div class="alert alert-danger" role="alert" *ngIf="errors">
             Erro no cadastro, preencha novamente.
           </div>
         </div>
@@ -73,7 +73,7 @@
           </button>
         </div>
         <div class="col-md-2">
-          <button type="button" class="btn btn-primary" (click)="voltarParaLista()">
+          <button type="button" class="btn btn-primary" (click)="redirecionarParaConsulta()">
             <i class="fa fa-regular fa-address-book"></i>
             Lista
           </button>
