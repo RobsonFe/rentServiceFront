@@ -82,7 +82,6 @@ export class LocacaoComponent implements OnInit {
           this.errors = false;
           console.log('Locação cadastrada:', response);
           this.limparFormulario();
-          this.redirecionarParaConsulta();
         },
         error => {
           console.error('Erro ao cadastrar locação:', error);
