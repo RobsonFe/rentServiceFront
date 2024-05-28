@@ -6,13 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LocacaoStatus } from '../../model/locacaoStatus.enum';
 import { TipoVeiculo } from '../../model/tipoVeiculo.enum';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-locacao',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink, RouterModule],
   templateUrl: './locacao.component.html',
   styleUrls: ['./locacao.component.css'],
 
@@ -35,7 +35,7 @@ export class LocacaoComponent implements OnInit {
   success: boolean = false;
   erros: boolean = false;
 
-  constructor(private locacaoService: LocacaoService) {}
+  constructor(private locacaoService: LocacaoService, private router:Router) {}
 
   ngOnInit(): void {}
 
@@ -69,6 +69,9 @@ export class LocacaoComponent implements OnInit {
     );
   }
 
+  voltarParaLista(){
+    this.router.navigate(["consultar"])
+  }
 
   private formatarData(data: string): string {
     const [year, month, day] = data.split('-');
