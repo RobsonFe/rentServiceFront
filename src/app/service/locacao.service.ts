@@ -21,6 +21,10 @@ export class LocacaoService {
     return this.http.get<Cliente[]>(`${this.apiUrlLocacao}`);
   }
 
+  listarClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${this.apiUrlCliente}/listar`);
+  }
+
   consultarLocacao(id: number): Observable<Cliente> {
     return this.http.get<Cliente>(`${this.apiUrlLocacao}/consultar/${id}`);
   }

@@ -19,6 +19,7 @@ import { RouterLink } from '@angular/router';
 })
 export class LocacaoComponent implements OnInit {
   cliente: Cliente = {
+    id: '',
     name: '',
     dataInicial: '',
     dataFinal: '',
@@ -76,6 +77,7 @@ export class LocacaoComponent implements OnInit {
 
   limparFormulario() {
     this.cliente = {
+      id: '',
       name: '',
       dataInicial: '',
       dataFinal: '',

@@ -1,48 +1,47 @@
 <div class="container">
   <div class="container-fluid">
     <h1 class="mt-4">Consulta de Cadastro</h1>
-<ol class="breadcrumb mb-4">
-  <li class="breadcrumb-item active">Consulta</li>
-</ol>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Consulta</li>
+    </ol>
 
-<div class="container">
-  <form>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>ID</label>
-          <input type="text" class="form-control" disabled="true" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Nome</label>
-          <input type="text" class="form-control" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data Inicial</label>
-          <input type="text" class="form-control" disabled="true" />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Data Final</label>
-          <input type="text" class="form-control" disabled="true"/>
-        </div>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-success">
-          <i class="fa fa-save"></i>
-          Cadastrar
+        <button class="btn btn-warning">
+          <i class="fa fa-plus"></i>
         </button>
       </div>
     </div>
-  </form>
-</div>
-
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Data Inicial</th>
+              <th>Data Final</th>
+              <th>Status</th>
+              <th>Veiculo</th>
+              <th>Tipo de Veiculo</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cliente of getClientes()">
+              <td>{{ cliente.id }}</td>
+              <td>{{ cliente.name }}</td>
+              <td>{{ cliente.dataInicial }}</td>
+              <td>{{ cliente.dataFinal }}</td>
+              <td>{{ cliente.locacaoStatus}}</td>
+              <td>{{ cliente.veiculo }}</td>
+              <td>{{ cliente.tipoVeiculo }}</td>
+              <td>{{ cliente.descricao }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
