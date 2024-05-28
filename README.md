@@ -1,5 +1,5 @@
 # Rentservice Front-End
-A RentService é uma API REST desenvolvida em Java com Spring Boot para gerenciar as locações de carros de uma locadora. A API permite cadastrar, consultar e cancelar locações, além de garantir que um cliente não possa ter mais de uma locação ativa ao mesmo tempo e que a data inicial da locação não ultrapasse a data final.
+A RentService é uma API REST desenvolvida em Java com Spring Boot e Angular para gerenciar as locações de carros de uma locadora. A API permite cadastrar, consultar e cancelar locações, além de garantir que um cliente não possa ter mais de uma locação ativa ao mesmo tempo e que a data inicial da locação não ultrapasse a data final.
 
 Esse Projeto foi Gerado via [Angular CLI](https://github.com/angular/angular-cli) versão 18.0.0.
 
@@ -20,12 +20,14 @@ A RentService é uma API REST desenvolvida em Java com Spring Boot para gerencia
 - Listar todas as Locações
 - Excluir Dados do cliente com Locações
 
-## Acesse a aplicação no lado do Servidor
-
-[Clique Aqui](https://github.com/RobsonFe/rentServiceAPI/)
-
 ## Baixe as orientações 
 - [Link para baixar as instruções](https://drive.google.com/file/d/1eauvYGpxh5Y45gToOZQT3HkDxKTgD-vG/view?usp=drive_link)
+
+- [Projeto 1](https://github.com/RobsonFe/rentServiceAPI)
+
+- [Projeto 2](https://github.com/RobsonFe/rentServiceFront)
+
+- [Projeto 3](https://docs.google.com/document/d/1Th5OMCX1ghsC6ZQucF0CeTorBxgzgo5FfP_1cBVufPU/edit?usp=sharing)
 
 ## Como rodar na sua maquina Local
 
