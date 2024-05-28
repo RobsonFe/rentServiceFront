@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LocacaoStatus } from '../../model/locacaoStatus.enum';
 import { TipoVeiculo } from '../../model/tipoVeiculo.enum';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class LocacaoComponent implements OnInit {
   success: boolean = false;
   erros: boolean = false;
 
-  constructor(private locacaoService: LocacaoService, private router:Router) {}
+  constructor(private locacaoService: LocacaoService, private router:Router,private activateRoute: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
@@ -67,7 +67,16 @@ export class LocacaoComponent implements OnInit {
         this.limparFormulario();
       }
     );
+
+    let params = this.activateRoute.params.subscribe(
+      params => {
+        if(params['id']){
+          console.log("ID recebido da rota", params['id']);
+        }
+      }
+    )
   }
+
 
   voltarParaLista(){
     this.router.navigate(["consultar"])

@@ -1,7 +1,7 @@
+import { Cliente } from './../model/cliente.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente } from '../model/cliente.model';
 import { Locacao } from '../model/locacao.model';
 
 @Injectable({
@@ -32,6 +32,10 @@ export class LocacaoService {
 
   consultarLocacao(id: number): Observable<Cliente> {
     return this.http.get<Cliente>(`${this.apiUrlLocacao}/consultar/${id}`);
+  }
+
+  alterarCadastro(id: number, cliente:Cliente): Observable<Cliente>{
+    return this.http.put<Cliente>(`${this.apiUrlCliente}/alterar/${id}`, cliente)
   }
 
   buscarPorNome(nome: string): Observable<Cliente[]> {
