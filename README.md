@@ -1,27 +1,50 @@
-# RentserviceFront
+# Rentservice Front-End
+A RentService é uma API REST desenvolvida em Java com Spring Boot para gerenciar as locações de carros de uma locadora. A API permite cadastrar, consultar e cancelar locações, além de garantir que um cliente não possa ter mais de uma locação ativa ao mesmo tempo e que a data inicial da locação não ultrapasse a data final.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+Esse Projeto foi Gerado via [Angular CLI](https://github.com/angular/angular-cli) versão 18.0.0.
 
-## Development server
+# Teste Técnico Full Stack Spring Boot
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Teste Ténico para a empresa Flowing
+- Projeto Full Stack com Spring Boot + Angular 
+- Autor: Robson Ferreira
 
-## Code scaffolding
+## Descrição
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A RentService é uma API REST desenvolvida em Java com Spring Boot para gerenciar as locações de carros de uma locadora. A API permite cadastrar, consultar e cancelar locações, além de garantir que um cliente não possa ter mais de uma locação ativa ao mesmo tempo e que a data inicial da locação não ultrapasse a data final.
+
+## Funcionalidades
+
+- Cadastrar Cadastrar Cliente com Locação
+- Consultar Consultar Listagens de Clientes
+- Listar todas as Locações
+- Excluir Dados do cliente com Locações
+
+## Baixe as orientações 
+- [Link para baixar as instruções](https://drive.google.com/file/d/1eauvYGpxh5Y45gToOZQT3HkDxKTgD-vG/view?usp=drive_link)
+
+## Como rodar na sua maquina Local
+
+- Baixe o Node no seu compuetador [Baixe Aqui](https://nodejs.org/en)
+
+- Depois de instalar o Node Globalmente, baixe todos os pacotes da aplicação usando o `npm install`
+
+- Execute `ng serve` no seu compuetador navegue até `http://localhost:4200/`. A aplicação funcionará normalmente.
+
+- Caso queira que abra diretamente no seu navegador padrão, utilize `ng s -o`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng build` Para fazer build do Projeto. O build da aplicação ficará no diretoório `dist/`.
 
-## Running unit tests
+## Tecnologias Utilizadas 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 18 
+- Angular CLI
+- Bootstrap 4.0.2
 
-## Running end-to-end tests
+## Autor
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Robson Ferreira](https://github.com/RobsonFe)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
