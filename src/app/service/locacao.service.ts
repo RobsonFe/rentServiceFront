@@ -50,6 +50,9 @@ export class LocacaoService {
   cancelarLocacao(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrlLocacao}/cancelar/${id}`);
   }
+  deletarCliente(cliente: Cliente): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrlCliente}/deletar/${cliente.id}`);
+  }
 
   calcularDiasRestantes(): Observable<void> {
     return this.http.post<void>(`${this.apiUrlLocacao}/calcular-dias-restantes`, null);

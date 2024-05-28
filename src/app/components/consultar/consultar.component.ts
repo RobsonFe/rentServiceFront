@@ -21,6 +21,8 @@ export class ConsultarComponent implements OnInit {
 
   cliente: any[] = [];
   clienteSelecionado?: Cliente;
+  mensagemSucesso?: string;
+  mensagemErro?:string;
 
   constructor(private service: LocacaoService, private router:Router) {}
 
@@ -43,6 +45,21 @@ export class ConsultarComponent implements OnInit {
 
   preparaDelecao(cliente:Cliente){
     this.clienteSelecionado = cliente;
+  }
+
+  excluirCliente(): void {
+    if (this.clienteSelecionado) {
+      this.service.deletarCliente(this.clienteSelecionado).subscribe(
+        () => {
+          this.mensagemSucesso = "Cliente deletado com sucesso!";
+          this.cliente = this.cliente.filter(c => c.id !== this.clienteSelecionado!.id);
+        },
+        (error) => {
+          this.mensagemErro = "Erro ao deletar cliente";
+          console.error(error);
+        }
+      );
+    }
   }
 
 }
