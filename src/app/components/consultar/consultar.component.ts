@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { Cliente } from '../../model/cliente.model';
 
 @Component({
   selector: 'app-consultar',
@@ -19,7 +20,7 @@ import { Router, RouterModule } from '@angular/router';
 export class ConsultarComponent implements OnInit {
 
   cliente: any[] = [];
-
+  clienteSelecionado?: Cliente;
 
   constructor(private service: LocacaoService, private router:Router) {}
 
@@ -38,6 +39,10 @@ export class ConsultarComponent implements OnInit {
 
   novoCadastro(){
     this.router.navigate(['cadastrar']);
+  }
+
+  preparaDelecao(cliente:Cliente){
+    this.clienteSelecionado = cliente;
   }
 
 }
