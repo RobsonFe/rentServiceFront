@@ -3,7 +3,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LocacaoComponent } from './components/locacao/locacao.component';
 import { ConsultarComponent } from './components/consultar/consultar.component';
-import { EditarComponent } from './components/editar/editar.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
@@ -13,7 +12,6 @@ export const routes: Routes = [
   { path: 'cadastrar', component: LocacaoComponent },
   { path: 'consultar', component: ConsultarComponent },
   { path: 'cadastrar/:id', component: LocacaoComponent },
-  { path: 'editar', component: EditarComponent },
 ];
 
 @NgModule({
