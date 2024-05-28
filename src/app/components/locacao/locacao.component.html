@@ -8,6 +8,17 @@
 
   <div class="container">
     <form (ngSubmit)="cadastrarLocacao()" #locacaoForm="ngForm">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success" role="alert" *ngIf="success">
+            Cadastro realizado com sucesso!
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="erros">
+            Erro no cadastro, preencha novamente.
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">

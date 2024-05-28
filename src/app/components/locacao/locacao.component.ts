@@ -31,6 +31,9 @@ export class LocacaoComponent implements OnInit {
   locacaoStatuses = Object.values(LocacaoStatus);
   tipoVeiculos = Object.values(TipoVeiculo);
 
+  success: boolean = false;
+  erros: boolean = false;
+
   constructor(private locacaoService: LocacaoService) {}
 
   ngOnInit(): void {}
@@ -51,11 +54,15 @@ export class LocacaoComponent implements OnInit {
 
     this.locacaoService.cadastrarLocacao(clienteFormatado).subscribe(
       response => {
+        this.success =true;
+        this.erros = false;
         console.log('Locação cadastrada:', response);
         this.limparFormulario();
       },
       error => {
         console.error('Erro ao cadastrar locação:', error);
+        this.success = false;
+        this.erros = error;
         this.limparFormulario();
       }
     );
