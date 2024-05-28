@@ -13,7 +13,6 @@ import {
   HttpHandler,
 } from '@angular/common/http';
 import { ConsultarComponent } from './components/consultar/consultar.component';
-import { EditarComponent } from './components/editar/editar.component';
 
 
 @Component({
@@ -28,7 +27,6 @@ import { EditarComponent } from './components/editar/editar.component';
     LocacaoComponent,
     HttpClientModule,
     ConsultarComponent,
-    EditarComponent,
     RouterModule,
     RouterLink
   ],
