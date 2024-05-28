@@ -9,6 +9,7 @@
       <div class="col-md-2">
         <button class="btn btn-warning">
           <i class="fa fa-plus"></i>
+          Novo
         </button>
       </div>
     </div>
@@ -29,16 +30,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let cliente of getClientes()">
-              <td>{{ cliente.id }}</td>
-              <td>{{ cliente.name }}</td>
-              <td>{{ cliente.dataInicial }}</td>
-              <td>{{ cliente.dataFinal }}</td>
-              <td>{{ cliente.locacaoStatus}}</td>
-              <td>{{ cliente.veiculo }}</td>
-              <td>{{ cliente.tipoVeiculo }}</td>
-              <td>{{ cliente.descricao }}</td>
-            </tr>
+            <ng-container *ngFor="let cliente of cliente">
+              <tr *ngFor="let locacao of cliente.locacoes">
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.name }}</td>
+                <td>{{ cliente.locacaoStatus }}</td>
+                <td>{{ locacao.id }}</td>
+                <td>{{ locacao.dataInicial }}</td>
+                <td>{{ locacao.dataFinal }}</td>
+                <td>{{ locacao.veiculo }}</td>
+                <td>{{ locacao.descricao }}</td>
+                <td>{{ locacao.tipoVeiculo }}</td>
+              </tr>
+            </ng-container>
           </tbody>
         </table>
       </div>

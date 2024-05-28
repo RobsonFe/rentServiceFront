@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/cliente.model';
+import { Locacao } from '../model/locacao.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,16 @@ export class LocacaoService {
     return this.http.post<Cliente>(`${this.apiUrlLocacao}/cadastrar`, cliente);
   }
 
-  listarLocacoes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(`${this.apiUrlLocacao}`);
+  listarLocacoes(): Observable<Locacao[]> {
+    return this.http.get<Locacao[]>(`${this.apiUrlLocacao}/listar`);
   }
 
   listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${this.apiUrlCliente}/listar`);
+  }
+
+  listarTudo(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrlCliente}/listar`);
   }
 
   consultarLocacao(id: number): Observable<Cliente> {

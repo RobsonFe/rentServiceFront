@@ -9,6 +9,8 @@ import {
   HttpHandler,
 } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { error } from 'jquery';
+import { Locacao } from '../../model/locacao.model';
 
 @Component({
   selector: 'app-consultar',
@@ -16,26 +18,29 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './consultar.component.html',
   styleUrl: './consultar.component.css',
-  providers: [HttpClient],
+  providers: [HttpClient, LocacaoService],
 })
 export class ConsultarComponent implements OnInit {
+
+  cliente: any[] = [];
+
+
   constructor(private service: LocacaoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.service.listarClientes().subscribe(
+      response => {
+        this.cliente = response
+        console.log("Dados recebidos do Spring Boot:", this.cliente)
+      },
+      error =>{
+        console.log("Erro ao carregar dados:", this.cliente)
+      }
+    )
 
-  getClientes(): Cliente[] {
-
-    let cliente: Cliente = {
-      id: '1',
-      name: 'Robson',
-      dataInicial: '27/05/2024',
-      dataFinal: '30/05/2024',
-      locacaoStatus: LocacaoStatus.TEM_LOCACAO,
-      veiculo: 'Kwid',
-      tipoVeiculo: TipoVeiculo.CARRO,
-      descricao: 'Carro novo',
-    };
-
-    return [cliente];
   }
+
+
+
+
 }
