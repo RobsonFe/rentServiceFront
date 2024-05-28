@@ -20,9 +20,9 @@ A RentService é uma API REST desenvolvida em Java com Spring Boot para gerencia
 - Listar todas as Locações
 - Excluir Dados do cliente com Locações
 
-## Acesse a aplicação no lado do cliente
+## Acesse a aplicação no lado do Servidor
 
-[Clique Aqui](https://github.com/RobsonFe/rentServiceFront)
+[Clique Aqui](https://github.com/RobsonFe/rentServiceAPI/)
 
 ## Baixe as orientações 
 - [Link para baixar as instruções](https://drive.google.com/file/d/1eauvYGpxh5Y45gToOZQT3HkDxKTgD-vG/view?usp=drive_link)
