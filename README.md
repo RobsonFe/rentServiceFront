@@ -31,6 +31,8 @@ A RentService é uma API REST desenvolvida em Java com Spring Boot para gerencia
 
 - [Projeto 3](https://docs.google.com/document/d/1Th5OMCX1ghsC6ZQucF0CeTorBxgzgo5FfP_1cBVufPU/edit?usp=sharing)
 
+- [Video do Projeto](https://youtu.be/LgF5LVHli4c)
+
 ## Como rodar na sua maquina Local
 
 - Baixe o Node no seu compuetador [Baixe Aqui](https://nodejs.org/en)
