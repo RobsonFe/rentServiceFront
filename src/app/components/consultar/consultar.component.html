@@ -34,13 +34,12 @@
               <tr *ngFor="let locacao of cliente.locacoes">
                 <td>{{ cliente.id }}</td>
                 <td>{{ cliente.name }}</td>
-                <td>{{ cliente.locacaoStatus }}</td>
-                <td>{{ locacao.id }}</td>
                 <td>{{ locacao.dataInicial }}</td>
                 <td>{{ locacao.dataFinal }}</td>
+                <td>{{ cliente.locacaoStatus }}</td>
                 <td>{{ locacao.veiculo }}</td>
-                <td>{{ locacao.descricao }}</td>
                 <td>{{ locacao.tipoVeiculo }}</td>
+                <td>{{ locacao.descricao }}</td>
                 <button class="btn btn-primary" routerLink="/cadastrar/{{cliente.id}}{{cliente.value}}">
                   <i class="fa fa-edit"></i>
                 </button>
